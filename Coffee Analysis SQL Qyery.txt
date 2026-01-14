@@ -1,0 +1,29 @@
+SELECT transaction_date,
+        DAYNAME(transaction_date) AS Day_Name,
+        CASE
+            WHEN DAYNAME(transaction_date) IN ('Sat','Sun') THEN 'Weekend'
+            ELSE 'Weekday'
+        END AS Day_Classification,
+        MONTHNAME(transaction_date) AS Month_Name,
+       
+        CASE
+            WHEN transaction_time BETWEEN '06:00:00' AND '08:59:59' THEN 'Early Morning'
+            WHEN transaction_time BETWEEN '09:00:00' AND '11:59:59' THEN 'Morning'
+            WHEN transaction_time BETWEEN '12:00:00' AND '15:59:59' THEN 'Afternoon'
+            WHEN transaction_time BETWEEN '16:00:00' AND '19:59:59' THEN 'Evening'
+            WHEN transaction_time >='20:00:00' THEN 'Night'
+        END AS Time_Buckett,
+        
+        HOUR(transaction_time) AS Hour_OF_Day,
+        
+        STORE_LOCATION,
+        product_category,
+        product_detail,
+        product_type,
+        transaction_qty,
+        unit_price,
+        SUM(transaction_qty*unit_price) AS Revenue,
+        COUNT (DISTINCT transaction_id) AS Number_Sales
+FROM bright.coffee.shop
+GROUP BY ALL;
+   
