@@ -23,10 +23,6 @@ Before implementation, **Miro** was used to plan the project workflow, define bu
 ## Tools & Technologies
 
 * **SQL** – data cleaning, transformation, and analysis
-* **Google Cloud Platform**
-
-  * Google Cloud Storage – data storage (CSV files)
-  * BigQuery – querying and analysis
 * **Snowflake** – cloud data warehousing and SQL analytics
 * **Looker Studio** – data visualization and dashboarding
 * **Miro** – project planning, data exploration, and analysis scoping
