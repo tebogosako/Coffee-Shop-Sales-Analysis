@@ -45,8 +45,7 @@ The dataset consists of coffee shop transactional records, including:
 * Aggregations by day, product, and transaction type
 * Identification of sales patterns and trends
 
-
-##Visualizations
+## Visualizations
 
 Visualizations included in this repository are provided in **PDF format** for easy viewing and sharing. These dashboards highlight key metrics such as revenue trends, peak sales days, and product performance.
 
